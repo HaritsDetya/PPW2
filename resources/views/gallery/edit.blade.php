@@ -21,7 +21,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label class="font-weight-bold">New Description</label>
-                                <input type="text" class="form-control @error('content') is-invalid @enderror" name="email" rows="5" value="{{ old('description', $movie->description) }}" placeholder="Insert New Description"></input>
+                                <input type="text" class="form-control @error('content') is-invalid @enderror" name="description" rows="5" value="{{ old('description', $movie->description) }}" placeholder="Insert New Description"></input>
                                 @error('content')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}

@@ -9,6 +9,9 @@ use App\Http\Controllers\SendEmailController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
 
+use App\Http\Controllers\InfoController;
+use App\Http\Controllers\ApiController;
+
 Route::controller(LoginRegisterController::class)->group(function(){
     Route::get('/register', 'register')->name('register');
     Route::get('/login', 'login')->name('login');
@@ -29,3 +32,7 @@ Route::post('/postemail', [SendEmailController::class, 'store'])->name('postemai
 Storage::disk('local')->put('file.txt', 'Contents');
 
 Route::resource('gallery', GalleryController::class);
+
+// API
+Route::get('/api/info', [InfoController::class, 'index'])->name('info');
+Route::get('/api/test', [ApiController::class, 'index']);
