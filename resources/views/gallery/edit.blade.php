@@ -7,12 +7,12 @@
             <div class="col-md-12">
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
-                        <form action="{{ route('user.update', $users->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('gallery.update', $movie->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="form-group mb-3">
-                                <label class="font-weight-bold">New Name</label>
-                                <input type="text" class="form-control @error('title') is-invalid @enderror" name="name" value="{{ old('name', $users->name) }}" placeholder="Insert New Username">
+                                <label class="font-weight-bold">New Title</label>
+                                <input type="text" class="form-control @error('title') is-invalid @enderror" name="name" value="{{ old('title', $movie->title) }}" placeholder="Insert New Title">
                                 @error('title')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
@@ -20,8 +20,8 @@
                                 @enderror
                             </div>
                             <div class="form-group mb-3">
-                                <label class="font-weight-bold">New Email</label>
-                                <input type="text" class="form-control @error('content') is-invalid @enderror" name="email" rows="5" value="{{ old('email', $users->email) }}" placeholder="Insert New Email"></input>
+                                <label class="font-weight-bold">New Description</label>
+                                <input type="text" class="form-control @error('content') is-invalid @enderror" name="description" rows="5" value="{{ old('description', $movie->description) }}" placeholder="Insert New Description"></input>
                                 @error('content')
                                 <div class="alert alert-danger mt-2">
                                     {{ $message }}
@@ -30,8 +30,8 @@
                             </div>
                             <label class="font-weight-bold">Image</label>
                             <div class="form-group mb-3">
-                                @if($users->photo)
-                                <img src="{{asset('storage/'.$users->photo )}}" class="img-preview img-fluid mb-3" width="250px">
+                                @if($movie->photo)
+                                <img src="{{asset('storage/'.$movie->photo )}}" class="img-preview img-fluid mb-3" width="250px">
                                 @else
                                 <img class="img-preview img-fluid mb-3 col-sm-5">
                                 @endif

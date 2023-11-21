@@ -8,17 +8,17 @@
             <div class="card-header">Dashboard</div>
             <div class="card-body">
                 @if ($message = Session::get('success'))
-                    <div class="alert alert-success">
-                        {{ $message }}
-                    </div>
+                <div class="alert alert-success">
+                    {{ $message }}
+                </div>
                 @else
-                    <div class="alert alert-success">
-                        You are logged in!
-                    </div>       
-                @endif                
+                <div class="alert alert-success">
+                    You are logged in!
+                </div>
+                @endif
             </div>
         </div>
-    </div>    
+    </div>
 </div>
-    
+
 @endsection
